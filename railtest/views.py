@@ -30,7 +30,7 @@ def home(request):
         'bookings': bookings,
     }
 
-    return render(request, 'main/home.html', context)
+    return render(request, 'railtest/home.html', context)
 
 
 def building_list(request):
