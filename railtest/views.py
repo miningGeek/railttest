@@ -21,7 +21,7 @@ from .forms import AddBuildingForm, AddBuildingLevelForm, AddBuildingRoomForm, A
 
 from .utils import Calendar
 # Create your views here.
-
+#add some comments to push
 
 def home(request):
     bookings = Booking.objects.all()
