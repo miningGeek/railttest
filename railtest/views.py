@@ -48,7 +48,7 @@ def building_list(request):
         'build_lists': build_lists,
         'form': form
     }
-    return render(request, 'main/building_list.html', context)
+    return render(request, 'railtest/building_list.html', context)
 
 
 def edit_building_list(request, building_id):
@@ -56,17 +56,17 @@ def edit_building_list(request, building_id):
     form = AddBuildingForm(request.POST or None, instance=build_lists)
     if form.is_valid():
         form.save()
-        return redirect('main_app:edit_building_list')
+        return redirect('rail_app:edit_building_list')
     context = {
         'form': form
     }
-    return render(request, 'main/edit_building_list.html', context)
+    return render(request, 'railtest/edit_building_list.html', context)
 
 
 def delete_building_list(request, building_id):
     build_lists = Building.objects.get(pk=building_id)
     build_lists.delete()
-    return redirect('main_app:building_list')
+    return redirect('rail_app:building_list')
 
 
 def build_level(request):
@@ -76,7 +76,7 @@ def build_level(request):
         form = AddBuildingLevelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:build_level')
+            return redirect('rail_app:build_level')
     else:
         form = AddBuildingLevelForm
 
@@ -84,7 +84,7 @@ def build_level(request):
         'build_levels': build_levels,
         'form': form
     }
-    return render(request, 'main/build_level.html', context)
+    return render(request, 'railtest/build_level.html', context)
 
 
 def edit_build_level(request, level_id):
@@ -92,17 +92,17 @@ def edit_build_level(request, level_id):
     form = AddBuildingLevelForm(request.POST or None, instance=build_levels)
     if form.is_valid():
         form.save()
-        return redirect('main_app:build_level')
+        return redirect('rail_app:build_level')
     context = {
         'form': form
     }
-    return render(request, 'main/build_level.html', context)
+    return render(request, 'railtest/build_level.html', context)
 
 
 def delete_build_level(request, level_id):
     build_levels = BuildingLevel.objects.get(pk=level_id)
     build_levels.delete()
-    return redirect('main_app:build_level')
+    return redirect('rail_app:build_level')
 
 
 def build_room(request):
@@ -112,7 +112,7 @@ def build_room(request):
         form = AddBuildingRoomForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:build_room')
+            return redirect('rail_app:build_room')
     else:
         form = AddBuildingRoomForm
 
@@ -120,7 +120,7 @@ def build_room(request):
         'build_rooms': build_rooms,
         'form': form
     }
-    return render(request, 'main/build_room.html', context)
+    return render(request, 'railtest/build_room.html', context)
 
 
 def edit_build_room(request, room_id):
@@ -128,17 +128,17 @@ def edit_build_room(request, room_id):
     form = AddBuildingRoomForm(request.POST or None, instance=build_rooms)
     if form.is_valid():
         form.save()
-        return redirect('main_app:build_room')
+        return redirect('rail_app:build_room')
     context = {
         'form': form
     }
-    return render(request, 'main/build_room.html', context)
+    return render(request, 'railtest/build_room.html', context)
 
 
 def delete_build_room(request, room_id):
     build_levels = Rooms.objects.get(pk=room_id)
     build_levels.delete()
-    return redirect('main_app:build_room')
+    return redirect('rail_app:build_room')
 
 
 def equip_list(request):
@@ -148,7 +148,7 @@ def equip_list(request):
         form = AddEquipmentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:equip_list')
+            return redirect('rail_app:equip_list')
     else:
         form = AddEquipmentForm
 
@@ -156,7 +156,7 @@ def equip_list(request):
         'equip_lists': equip_lists,
         'form': form
     }
-    return render(request, 'main/equip_list.html', context)
+    return render(request, 'railtest/equip_list.html', context)
 
 
 def edit_equip_list(request, equip_id):
@@ -164,17 +164,17 @@ def edit_equip_list(request, equip_id):
     form = AddEquipmentForm(request.POST or None, instance=equip_lists)
     if form.is_valid():
         form.save()
-        return redirect('main_app:equip_list')
+        return redirect('rail_app:equip_list')
     context = {
         'form': form,
     }
-    return render(request, 'main/edit_equip_list.html', context)
+    return render(request, 'railtest/edit_equip_list.html', context)
 
 
 def delete_equip_list(request, equip_id):
     equip_lists = Equipment.objects.get(pk=equip_id)
     equip_lists.delete()
-    return redirect('main_app:equip_list')
+    return redirect('rail_app:equip_list')
 
 
 def research_cent(request):
@@ -184,7 +184,7 @@ def research_cent(request):
         form = AddResearchCentreForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:research_cent')
+            return redirect('rail_app:research_cent')
     else:
         form = AddResearchCentreForm
 
@@ -192,7 +192,7 @@ def research_cent(request):
         'research_centres': research_centres,
         'form': form,
     }
-    return render(request, 'main/research_cent.html', context)
+    return render(request, 'railtest/research_cent.html', context)
 
 
 def edit_research_cent(request, centre_id):
@@ -200,17 +200,17 @@ def edit_research_cent(request, centre_id):
     form = AddResearchCentreForm(request.POST or None, instance=centres)
     if form.is_valid():
         form.save()
-        return redirect('main_app:research_cent')
+        return redirect('rail_app:research_cent')
     context = {
         'form': form,
     }
-    return render(request, 'main/edit_research_cent.html', context)
+    return render(request, 'railtest/edit_research_cent.html', context)
 
 
 def delete_research_cent(request, centre_id):
     centres = ResearchCentres.objects.get(pk=centre_id)
     centres.delete()
-    return redirect('main_app:research_cent')
+    return redirect('rail_app:research_cent')
 
 
 def group(request):
@@ -220,7 +220,7 @@ def group(request):
         form = AddGroupForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:group')
+            return redirect('rail_app:group')
     else:
         form = AddGroupForm
 
@@ -228,7 +228,7 @@ def group(request):
         'groups': groups,
         'form': form,
     }
-    return render(request, 'main/group.html', context)
+    return render(request, 'railtest/group.html', context)
 
 
 def edit_group(request, group_id):
@@ -236,17 +236,17 @@ def edit_group(request, group_id):
     form = AddGroupForm(request.POST or None, instance=groups)
     if form.is_valid():
         form.save()
-        return redirect('main_app:group')
+        return redirect('rail_app:group')
     context = {
         'form': form,
     }
-    return render(request, 'main/edit_group.html', context)
+    return render(request, 'railtest/edit_group.html', context)
 
 
 def delete_group(request, group_id):
     groups = Group.objects.get(pk=group_id)
     groups.delete()
-    return redirect('main_app:group')
+    return redirect('rail_app:group')
 
 
 def booking(request):
@@ -256,7 +256,7 @@ def booking(request):
         form = AddBookingForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:home')
+            return redirect('rail_app:home')
     else:
         status = {'status': 'Pending'}
         form = AddBookingForm(initial=status)
@@ -265,7 +265,7 @@ def booking(request):
         'bookings': bookings,
         'form': form,
     }
-    return render(request, 'main/booking.html', context)
+    return render(request, 'railtest/booking.html', context)
 
 
 def edit_booking(request, booking_id):
@@ -273,17 +273,17 @@ def edit_booking(request, booking_id):
     form = AddBookingForm(request.POST or None, instance=bookings)
     if form.is_valid():
         form.save()
-        return redirect('main_app:home')
+        return redirect('rail_app:home')
     context = {
         'form': form,
     }
-    return render(request, 'main/edit_booking.html', context)
+    return render(request, 'railtest/edit_booking.html', context)
 
 
 def delete_booking(request, booking_id):
     bookings = Booking.objects.get(pk=booking_id)
     bookings.delete()
-    return redirect('main_app:home')
+    return redirect('rail_app:home')
 
 
 def status_choice(request):
@@ -293,7 +293,7 @@ def status_choice(request):
         form = StatusChoiceForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_app:status_choice')
+            return redirect('rail_app:status_choice')
     else:
         form = StatusChoiceForm
 
@@ -301,7 +301,7 @@ def status_choice(request):
         'status': status,
         'form': form,
     }
-    return render(request, 'main/status_choice.html', context)
+    return render(request, 'railtest/status_choice.html', context)
 
 
 def edit_status_choice(request, status_id):
@@ -309,22 +309,22 @@ def edit_status_choice(request, status_id):
     form = StatusChoiceForm(request.POST or None, instance=status)
     if form.is_valid():
         form.save()
-        return redirect('main_app:status_choice')
+        return redirect('rail_app:status_choice')
     context = {
         'form': form,
     }
-    return render(request, 'main/edit_status_choice.html', context)
+    return render(request, 'railtest/edit_status_choice.html', context)
 
 
 def delete_status_choice(request, status_id):
     status = StatusChoice.objects.get(pk=status_id)
     status.delete()
-    return redirect('main_app:status_choice')
+    return redirect('rail_app:status_choice')
 
 
 class booking_calendar(generic.ListView):
     model = Booking
-    template_name = 'main/booking_calendar.html'
+    template_name = 'railtest/booking_calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
