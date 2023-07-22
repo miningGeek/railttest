@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'basic.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://postgres:jgzbwKDtGKVjo9YwwdMs@containers-us-west-69.railway.app:5544/railway')
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
 
 
@@ -126,6 +126,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
